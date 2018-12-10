@@ -1,15 +1,9 @@
 spring:
   application:
     name: itoken-eureka
-
-server:
-  port: 8761
-
-eureka:
-  instance:
-    hostname: host
-  client:
-    registerWithEureka: false
-    fetchRegistry: false
-    serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  cloud:
+      config:
+        uri: http://localhost:8888
+        name: eureka-server
+        label: master
+        profile: dev
